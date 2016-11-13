@@ -1,10 +1,8 @@
 ---
-title: permission
+title: Android 动态权限管理
 date: 2016-11-13 13:19:27
 tags:
 ---
-# Android 动态权限管理
-
 从Android 6.0（API级别23）开始，用户在应用运行时（而不是在安装应用时）向应用授予权限。 此方法简化了应用安装过程，因为用户在安装或更新应用时不需要授予权限。 它还给用户更多的控制应用程序的功能; 例如，用户可以选择给摄像机应用访问摄像机而不是设备位置。 用户可以随时通过转到应用的设置屏幕撤消权限。<!--more-->
 
 ### 随着Android6.0的普及，我们不得不做的一件事情就是关于运行时权限管理的事情。
@@ -36,7 +34,7 @@ tags:
 4.requestPermissions(@NonNull String[] permissions, int requestCode)      
 申请请求一组权限，此方法可以一次申请多个权限，通过OnRequestPermissionsResultCallback方法获得用户操作后的权限状态
 
-5.nRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)这个方法用于接受申请权限后用户对权限操作的结果，可以看出来结果和权限时以一对的形式出现的。比如说permission[0] 对应grantResults[0],以此类推。
+5.OnRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)这个方法用于接受申请权限后用户对权限操作的结果，可以看出来结果和权限时以一对的形式出现的。比如说permission[0] 对应grantResults[0],以此类推。
 grantRsults的值也是3种类型和2中返回的类型是相同的，我们只需要对不同的类型进行判断就行了。
 
 ## 4.说再多都不如看代码
